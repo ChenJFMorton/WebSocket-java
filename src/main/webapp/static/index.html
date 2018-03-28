@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>404页面</title>
+		<!--<link type="text/css" rel="stylesheet" href="http://cdn.maijia.com/www-activity/pages/errorpage/css/error.css"/>-->
+</head>
+<!--<script src="http://cdn.maijia.com/maijia-common/components/jquery/jquery.js"></script>-->
+<!--<script type="text/javascript"src="../js/comet4j-js/build/comet4j-0.1.7.js"></script>-->
+<script type="text/javascript"src="js/comet4j-js/build/comet4j-0.1.7-debug.js"></script>
+<script type="text/javascript">
+    function init(){
+        var kbDom = document.getElementById('kb');
+        JS.Engine.on({
+            hello :function(kb){//侦听一个channel
+                kbDom.innerHTML = kb;
+            }
+        });
+        JS.Engine.start('conn');
+    }
+</script>
+<body onload="init()">
+剩余内存：<span id="kb">...</span>KB
+</body>
+<!-- @require "components/mod/mod.js" -->
+</html>

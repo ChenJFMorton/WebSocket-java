@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop  
+        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<context:component-scan base-package="com.chenjf.web.controller" />
+
+    <!-- 激活注解 -->
+	<context:annotation-config />
+
+	<aop:aspectj-autoproxy />
+
+    <!-- 扩展驱动，让请求可以进入到某个controller的方法中 -->
+	<mvc:annotation-driven>
+		<!--<mvc:message-converters>-->
+			<!--<ref bean="fastJsonHttpMessageConverter" />-->
+		<!--</mvc:message-converters>-->
+	</mvc:annotation-driven>
+
+	<!--<bean id="fastJsonHttpMessageConverter" class="com.raycloud.maijia.rest.web.MJFastJsonHttpMessageConverter">-->
+		<!--<property name="supportedMediaTypes">-->
+			<!--<list>-->
+				<!--<value>text/html;charset=UTF-8</value>-->
+				<!--<value>application/json;charset=UTF-8</value>-->
+			<!--</list>-->
+		<!--</property>-->
+		<!--<property name="features">-->
+			<!--<array value-type="com.alibaba.fastjson.serializer.SerializerFeature">-->
+				<!--<value>DisableCircularReferenceDetect</value>-->
+			<!--</array>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+	<mvc:default-servlet-handler />
+
+	<!--<mvc:resources mapping="/moon/**" location="/moon/" />-->
+	<!--<mvc:resources mapping="/singles/**" location="/singles/" />-->
+	<!--<mvc:resources mapping="/images/**" location="/images/" />-->
+	<!---->
+	<!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+		<!--<property name="prefix">-->
+			<!--<value>/WEB-INF/views/</value>-->
+		<!--</property>-->
+		<!--<property name="suffix">-->
+			<!--<value>.jsp</value>-->
+		<!--</property>-->
+	<!--</bean>-->
+	<!---->
+	<!--&lt;!&ndash; 文件上传 &ndash;&gt;-->
+	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+		<!--<property name="maxUploadSize" value="1024000" /> -->
+	<!--</bean>-->
+
+
+</beans>
